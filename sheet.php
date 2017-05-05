@@ -37,3 +37,9 @@ $request->request->all()
 
 // get all get parameter
 $request->query->all()
+
+// paging in view template
+<?= $this->render(
+	"Includes/paging.html.php",
+	get_object_vars($this->paginator->getPages("Sliding")));
+?>
