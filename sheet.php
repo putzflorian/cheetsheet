@@ -39,7 +39,10 @@ $request->request->all()
 $request->query->all()
 
 // paging in view template
-<?= $this->render(
+echo $this->render(
 	"Includes/paging.html.php",
 	get_object_vars($this->paginator->getPages("Sliding")));
-?>
+
+
+// clear all caches (Symfony + Data Cache) 
+./bin/console cache:clear --no-warmup && ./bin/console pimcore:cache:clear
