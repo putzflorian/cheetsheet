@@ -46,3 +46,6 @@ echo $this->render(
 
 // clear all caches (Symfony + Data Cache) 
 ./bin/console cache:clear --no-warmup && ./bin/console pimcore:cache:clear
+
+// get element in areabrick Action
+$info->getDocument()->getElement('thankyoupage');
