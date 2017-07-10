@@ -19,18 +19,7 @@ $this->getRequest()->get('id')
 $this->getRequest()->getPathInfo()
 
 // set header
-public function karriereFormAction(Request $request){
-	$job = Job::getById($request->get("id"));
-	$this->view->job = $job;
-	if( !$job || ( !$job->isPublished() && !$this->editmode) ) {
-		throw new NotFoundHttpException('Not found');
-	}
-
-	$response = $this->render('Content/karriereForm.html.php', $this->view->getAllParameters());
-	$response->headers->set('robots', 'noindex,nofollow');
-
-	return $response;
-}
+$this->addResponseHeader('X-Custom-Header3', ['foo', 'bar']);
 
 // get all post parameter
 $request->request->all()
