@@ -38,3 +38,6 @@ echo $this->render(
 
 // get element in areabrick Action
 $info->getDocument()->getElement('thankyoupage');
+
+// get view properties on Controllers and Area Brick Actions
+$this->getDocumentTag($info->getDocument(), 'href', 'admin-email-doc')
