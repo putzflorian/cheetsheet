@@ -41,3 +41,6 @@ $info->getDocument()->getElement('thankyoupage');
 
 // get view properties on Controllers and Area Brick Actions
 $this->getDocumentTag($info->getDocument(), 'href', 'admin-email-doc')
+
+// disable profiler for performance reasons (there are a LOT of DB queries being processed during this command) in CLI Commands
+$this->getContainer()->get('profiler')->disable();
