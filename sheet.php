@@ -44,3 +44,7 @@ $this->getDocumentTag($info->getDocument(), 'href', 'admin-email-doc')
 
 // disable profiler for performance reasons (there are a LOT of DB queries being processed during this command) in CLI Commands
 $this->getContainer()->get('profiler')->disable();
+
+// translator in Controller
+$translator = $this->get('translator');
+$translator->trans('abc');
