@@ -20,6 +20,7 @@ $this->getRequest()->getPathInfo()
 
 // set header
 $this->addResponseHeader('X-Custom-Header3', ['foo', 'bar']);
+$this->addResponseHeader('X-Robots-Tag', ["unavailable_after: " . $object->getDateTo()->toRfc850String()]);
 
 // get all post parameter
 $request->request->all()
