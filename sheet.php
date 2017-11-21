@@ -49,3 +49,12 @@ $this->getContainer()->get('profiler')->disable();
 // translator in Controller
 $translator = $this->get('translator');
 $translator->trans('abc');
+
+// redirect in controller
+
+return new RedirectResponse('/de', 301);
+
+oder
+
+$response = new RedirectResponse('/de', 301);
+$response->send();
