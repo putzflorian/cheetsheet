@@ -58,3 +58,6 @@ oder
 
 $response = new RedirectResponse('/de', 301);
 $response->send();
+
+// auch den prod cache leeren
+/bin/console cache:clear --env=prod
