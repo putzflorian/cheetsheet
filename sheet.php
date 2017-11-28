@@ -6,7 +6,7 @@
 $this->get('pimcore.locale')->setLocale('de);
 
 
-// call a service within a template
+// call a service within a template  // sollte nicht verwendet werden besser ist ei view helper
 $productService = $app->getContainer()->get('app.service.product');
 
 // call a service within a action
@@ -61,3 +61,7 @@ $response->send();
 
 // auch den prod cache leeren
 /bin/console cache:clear --env=prod
+
+
+// call a servive in a cli file
+$smg = Pimcore::getContainer()->get('AppBundle\Templating\Helper\Smg');
