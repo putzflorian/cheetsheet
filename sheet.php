@@ -65,3 +65,7 @@ $response->send();
 
 // call a servive in a cli file
 $smg = Pimcore::getContainer()->get('AppBundle\Templating\Helper\Smg');
+
+// list all registred services
+./bin/console debug:container
+
