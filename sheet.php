@@ -74,3 +74,8 @@ $smg = Pimcore::getContainer()->get('AppBundle\Templating\Helper\Smg');
 class Filterhelper extends Helper implements TemplatingEngineAwareHelperInterface {
 
     use \Pimcore\Templating\Helper\Traits\TemplatingEngineAwareHelperTrait;
+    
+    
+    
+// geo sortierung in der db
+$storeList->setOrderKey("(SELECT ACOS(SIN(geopoint__latitude / 180 * PI()) * SIN($centerlat / 180 * PI()) + COS(geopoint__latitude / 180 * PI()) * COS($centerlat / 180 * PI()) * COS(($centerlng / 180 * PI()) - (geopoint__longitude / 180 * PI()))) * 6378137)", false);    
