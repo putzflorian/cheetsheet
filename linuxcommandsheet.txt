@@ -16,3 +16,22 @@ mysql -u username -p database_name < backup_file.sql
 # SCP     // alter server               // neuer server
 scp  miguel@10.1.2.2:/home/miguel/ miguel@10.1.2.3:/home/miguel/
 scp datei1 datei2 user@server:/zielverzeichnis/
+
+# kill all apache processes
+kill -9 `ps au | grep apache | awk '{print $2}'`
+
+# calculate size of directories
+du -sh is a good place to start. The options are (from man du):
+
+   -s, --summarize
+          display only a total for each argument
+
+   -h, --human-readable
+          print sizes in human readable format (e.g., 1K 234M 2G)
+To check more than one directory and see the total, use du -sch:
+
+   -c, --total
+          produce a grand total
+
+// für unterordner und dateien
+z.b. du -mh --max-depth=1
