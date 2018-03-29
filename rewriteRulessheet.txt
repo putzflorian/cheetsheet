@@ -1,0 +1,16 @@
+# Nur einen Hostnamen / Domain für einen V-Host zulassen:
+RewriteCond %{HTTP_HOST} !^www.example.com$
+RewriteRule ^/(.*)$ http://www.example.com/ [L,R=301]
+
+# Alle Zugriffe bis auf eine IP sperren
+RewriteCond %{REMOTE_ADDR} !^10.10.10.10$
+RewriteRule ^/(.*) /maintenance.html [PT,L]
+
+# Redirect einer bestimmten (Sub-) Domain auf eine bestimmte Seite
+RewriteCond %{HTTP_HOST} ^subdomain.example.com$
+RewriteRule ^/(.*)$ http://www.example.com/subdomain/ [L,R=301]
+
+# alles ohne www auf www weiterleiten
+RewriteCond %{HTTP_HOST} !^www.*
+RewriteRule ^(.*) %{HTTP_HOST}$1 [C]
+RewriteRule ^(.+) http://www.$1 [R]
