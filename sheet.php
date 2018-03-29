@@ -57,7 +57,7 @@ $response = new RedirectResponse('/de', 301);
 $response->send();
 
 // auch den prod cache leeren
-/bin/console cache:clear --env=prod
+./bin/console cache:clear --env=prod
 
 
 // call a servive in a cli file
