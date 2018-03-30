@@ -1,6 +1,9 @@
 # Rsync
 rsync -avz /www user@ip:/www
 
+# Rsync mit Hardlinks
+rsync -avzH foo/bar/ user@host:/home/foo/bar/
+
 #Ein tar.gz-Archiv erstellen:
 tar cfvz archiv.tar.gz inhalt1 inhalt2
 
