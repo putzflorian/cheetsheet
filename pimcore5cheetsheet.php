@@ -9,6 +9,9 @@ $this->get('pimcore.locale')->setLocale('de);
 // call a service within a action
 $productService = $this->get('app.service.product');
 
+// call a service within a view
+$productService = $app->getContainer()->get('app.service.product');
+
 // get parameter in view
 $this->getRequest()->get('id')
 
