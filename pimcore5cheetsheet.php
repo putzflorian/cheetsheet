@@ -87,3 +87,6 @@ $storeList->setOrderKey("(SELECT ACOS(SIN(geopoint__latitude / 180 * PI()) * SIN
 
 // disable a service
 $this->get('Pimcore\Bundle\CoreBundle\EventListener\Frontend\TagManagerListener')->disable();
+
+// check Backend Access
+$backendAccess = \Pimcore\Tool\Authentication::authenticateSession($request);
