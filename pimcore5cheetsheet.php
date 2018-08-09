@@ -1,5 +1,7 @@
 <?php
 
+// Pimcore Updates
+COMPOSER_MEMORY_LIMIT=3G composer update
 
 
 // set Locale
@@ -38,6 +40,8 @@ echo $this->render(
 
 // clear all caches (Symfony + Data Cache) 
 ./bin/console cache:clear --no-warmup && ./bin/console pimcore:cache:clear
+./bin/console cache:clear --no-warmup --env=prod
+./bin/console cache:clear --no-warmup --env=dev
 
 // get element in areabrick Action
 $info->getDocument()->getElement('thankyoupage');
@@ -53,7 +57,6 @@ $translator = $this->get('translator');
 $translator->trans('abc');
 
 // redirect in controller
-
 return new RedirectResponse('/de', 301);
 
 oder
@@ -90,3 +93,6 @@ $this->get('Pimcore\Bundle\CoreBundle\EventListener\Frontend\TagManagerListener'
 
 // check Backend Access
 $backendAccess = \Pimcore\Tool\Authentication::authenticateSession($request);
+
+// Tag & Snippet Manager deaktivieren:
+$this->get('Pimcore\Bundle\CoreBundle\EventListener\Frontend\TagManagerListener')->disable();
