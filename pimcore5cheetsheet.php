@@ -96,3 +96,6 @@ $backendAccess = \Pimcore\Tool\Authentication::authenticateSession($request);
 
 // Tag & Snippet Manager deaktivieren:
 $this->get('Pimcore\Bundle\CoreBundle\EventListener\Frontend\TagManagerListener')->disable();
+
+// get Session
+$app->getContainer()->get('session')
