@@ -38,3 +38,6 @@ To check more than one directory and see the total, use du -sch:
 
 // für unterordner und dateien
 z.b. du -mh --max-depth=1
+
+# listet alle commands für den user
+sudo -l
