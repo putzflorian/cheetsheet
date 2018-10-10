@@ -99,3 +99,6 @@ $this->get('Pimcore\Bundle\CoreBundle\EventListener\Frontend\TagManagerListener'
 
 // get Session
 $app->getContainer()->get('session')
+
+// send Attachment Swift Mail
+$adminMail->attach(\Swift_Attachment::fromPath($file->getFileSystemPath()));
