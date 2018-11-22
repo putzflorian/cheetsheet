@@ -41,3 +41,7 @@ z.b. du -mh --max-depth=1
 
 # listet alle commands für den user
 sudo -l
+
+# auf der cli die php versions für die aktuelle session ändern
+alias php=/usr/bin/php7.2
+php -v 
