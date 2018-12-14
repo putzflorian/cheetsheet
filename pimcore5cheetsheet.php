@@ -5,7 +5,10 @@ COMPOSER_MEMORY_LIMIT=3G composer update
 
 
 // set Locale
-$this->get('pimcore.locale')->setLocale('de);
+$this->get('pimcore.locale')->setLocale('de');
+
+$localeService = \Pimcore::getContainer()->get('pimcore.locale');
+$localeService->setLocale('de');
 
 // call a service within a action
 $productService = $this->get('app.service.product');
