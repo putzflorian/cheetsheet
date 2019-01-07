@@ -1,7 +1,7 @@
 <?php
 
 // Pimcore Updates
-COMPOSER_MEMORY_LIMIT=3G composer update
+COMPOSER_MEMORY_LIMIT=-1 composer update
 
 
 // set Locale
