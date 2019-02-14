@@ -108,3 +108,6 @@ $adminMail->attach(\Swift_Attachment::fromPath($file->getFileSystemPath()));
 	
 // FIRE EVENT
 \Pimcore::getEventDispatcher()->dispatch(DataObjectEvents::PRE_DELETE, new DataObjectEvent($this));	
+
+// get document from master request
+$document = \Pimcore::getContainer()->get('request_stack')->getMasterRequest()->get('contentDocument');
