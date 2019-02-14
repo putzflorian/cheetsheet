@@ -105,3 +105,6 @@ $app->getContainer()->get('session')
 
 // send Attachment Swift Mail
 $adminMail->attach(\Swift_Attachment::fromPath($file->getFileSystemPath()));
+	
+// FIRE EVENT
+\Pimcore::getEventDispatcher()->dispatch(DataObjectEvents::PRE_DELETE, new DataObjectEvent($this));	
