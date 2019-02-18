@@ -111,3 +111,6 @@ $adminMail->attach(\Swift_Attachment::fromPath($file->getFileSystemPath()));
 
 // get document from master request
 $document = \Pimcore::getContainer()->get('request_stack')->getMasterRequest()->get('contentDocument');
+	
+// get routename
+$request->attributes->get('_route')	
