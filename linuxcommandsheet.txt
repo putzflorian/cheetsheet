@@ -45,3 +45,6 @@ sudo -l
 # auf der cli die php versions für die aktuelle session ändern
 alias php=/usr/bin/php7.2
 php -v 
+
+# copy ssh key to server
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
