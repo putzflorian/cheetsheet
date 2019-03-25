@@ -114,3 +114,7 @@ $document = \Pimcore::getContainer()->get('request_stack')->getMasterRequest()->
 	
 // get routename
 $request->attributes->get('_route')	
+
+// db quote
+\Pimcore\Db::get()->quote('%' . $keyWord . '%')	
+	
