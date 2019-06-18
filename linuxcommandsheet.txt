@@ -48,3 +48,6 @@ php -v
 
 # copy ssh key to server
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
+
+# wechselt den projektuser ganz
+su - projektuser
