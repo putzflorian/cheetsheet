@@ -3,6 +3,8 @@
 // Pimcore Updates
 COMPOSER_MEMORY_LIMIT=-1 composer update
 
+// get Pimcore User Everywhere
+\Pimcore\Tool\Authentication::authenticateSession();	
 
 // set Locale
 $this->get('pimcore.locale')->setLocale('de');
