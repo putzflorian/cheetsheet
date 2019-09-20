@@ -120,3 +120,20 @@ $request->attributes->get('_route')
 // db quote
 \Pimcore\Db::get()->quote('%' . $keyWord . '%')	
 	
+// sort obj list with field of fieldcollection
+$db = \Pimcore\Db::get();
+
+$resOrder = null;
+$idResult = $db->fetchAll("(SELECT DISTINCT ev.oo_id FROM object_event ev INNER JOIN object_collection_MeetingTime_event fc ON ev.oo_id = fc.o_id ORDER BY fc.dateFrom ASC)");
+if($idResult){
+    foreach ($idResult as $rs){
+	$resOrder[] = $rs['oo_id'];
+    }
+}
+
+if($resOrder){
+    $listing->setOrderKey("(FIELD(o_id," . implode(',',$resOrder) . "))", FALSE);
+    $listing->setOrder('ASC');
+}	
+	
+	
