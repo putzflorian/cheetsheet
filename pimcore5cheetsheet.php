@@ -136,4 +136,7 @@ if($resOrder){
     $listing->setOrder('ASC');
 }	
 	
+// statt file get valid filename
+\Pimcore\Model\Element\Service::getValidKey()	
+	
 	
