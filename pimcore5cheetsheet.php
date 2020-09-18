@@ -85,7 +85,24 @@ class Filterhelper extends Helper implements TemplatingEngineAwareHelperInterfac
 
     use \Pimcore\Templating\Helper\Traits\TemplatingEngineAwareHelperTrait;
     
-    
+// geo umkreissuche mysql
+https://developers.google.com/maps/solutions/store-locator/clothing-store-locator#findnearsql    
+
+SELECT
+  id, (
+    3959 * acos (
+      cos ( radians(78.3232) )
+      * cos( radians( lat ) )
+      * cos( radians( lng ) - radians(65.3234) )
+      + sin ( radians(78.3232) )
+      * sin( radians( lat ) )
+    )
+  ) AS distance
+FROM markers
+HAVING distance < 30
+ORDER BY distance
+LIMIT 0 , 20;	
+	
     
 // geo sortierung in der db
 $storeList->setOrderKey("(SELECT ACOS(SIN(geopoint__latitude / 180 * PI()) * SIN($centerlat / 180 * PI()) + COS(geopoint__latitude / 180 * PI()) * COS($centerlat / 180 * PI()) * COS(($centerlng / 180 * PI()) - (geopoint__longitude / 180 * PI()))) * 6378137)", false); 
